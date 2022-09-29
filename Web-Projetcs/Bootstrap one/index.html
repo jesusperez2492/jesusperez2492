@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Form and table witht Bootstrap</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">My first page using Bootstrap</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                </div>
+              </div>
+            </div>
+          </nav>
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-lg-4 col-xl-4 my-3 bg-white py-4">
+                <h2>Lenguages Form</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="lenguage" class="form-label">Programing Lenguages</label>
+                        <input type="text" class="form-control" id="lenguage" placeholder="example: Java" autofocus>
+                      </div>
+                      <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" placeholder="Lenguage Description" rows="3"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label for="programmers" class="form-label">Number of developers in course</label>
+                        <input type="number" class="form-control" id="programmers">
+                      </div>
+                      <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-success" onclick="return addLenguaje()">Submmit</button>
+                        <button type="button" class="btn btn-outline-dark" onclick="clear()">Clear</button>
+                      </div>
+                </form>
+            </div>
+            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-6 my-3 bg-white py-4">
+                <h2>List of Lenguages</h2>
+                <table id="table" class="table table-dark table-striped">
+                    <thead>
+                        <th>#</th>
+                        <th>Programing Lenguages</th>
+                        <th>Amount of programmers</th>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td >1</td>
+                            <td>JavaScript</td>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Python</td>
+                            <td>56</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Ruby</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>C#</td>
+                            <td>45</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+        <!-- Custom Javascript -->
+        <script src="javascript/code.js"></script>
+    </body>
+</html>
