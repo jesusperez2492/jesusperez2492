@@ -14,3 +14,6 @@ body{
     text-align: center;
     vertical-align: middle;
 }
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-secondary);
+  }

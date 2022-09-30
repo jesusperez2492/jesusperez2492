@@ -1,3 +1,4 @@
+bootstrapTooltips();
 table = document.getElementById("table");
 let children = table.children;
   for(element of children){
@@ -20,13 +21,30 @@ let clear = () =>{
   document.getElementById("description").value = null;
 }
 
+function bootstrapTooltips(){
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+}
+
 function addLenguaje(){
-  let lastCell = parseInt(document.getElementById("tableBody").lastElementChild.firstElementChild.innerText);
-  console.log(lastCell);
-  let lst = [];
-  lst.push(lastCell+1);
-  lst.push(document.getElementById("lenguage").value);
-  lst.push(document.getElementById("programmers").value);
-  addRow("tableBody",lst);
-  clear();
+  if(document.getElementById("lenguage").value && parseInt(document.getElementById("programmers").value) > 0){
+    tableBody = document.getElementById("tableBody");
+    let lastCell = parseInt(tableBody.lastElementChild.firstElementChild.innerText);
+    let description;
+    if(document.getElementById("description").value) description = document.getElementById("description").value;
+    else description = "No description added";
+    let lst = [];
+    lst.push(lastCell+1);
+    lst.push(document.getElementById("lenguage").value);
+    lst.push(document.getElementById("programmers").value);
+    addRow("tableBody",lst);
+    let value = tableBody.lastElementChild.children.item(1).innerHTML;
+    let newTag=`<td data-bs-toggle="tooltip" data-bs-placement="top"
+    data-bs-custom-class="custom-tooltip"
+    data-bs-title="${description}">${value}</td>`;
+    tableBody.lastElementChild.children.item(1).outerHTML = newTag;
+    bootstrapTooltips();
+    clear();
+  }
+  
 }
